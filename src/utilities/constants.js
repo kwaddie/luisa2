@@ -28,7 +28,8 @@ export const TEXT = {
     APP_NAME: "Kelvyn Park",
     APP_ASSISTANT_NAME: "Kelvyn Park Chat Assistant",
     ABOUT_US_TITLE: "About us",
-    ABOUT_US: "Our virtual chat assistant Luisa is here to help get your questions answered quickly",    FAQ_TITLE: "Frequently Asked Questions",
+    ABOUT_US: "Our virtual chat assistant Luisa is here to help get your questions answered quickly",
+    FAQ_TITLE: "Frequently Asked Questions",
     FAQS: [
       "What are the school hours?",
       "What core values does the school have?",
@@ -41,13 +42,14 @@ export const TEXT = {
     HELPER_TEXT: "Cannot send empty message",
     SPEECH_RECOGNITION_START: "Start Listening",
     SPEECH_RECOGNITION_STOP: "Stop Listening",
-    SPEECH_RECOGNITION_HELPER_TEXT: "Stop speaking to send the message" // New helper text
+    SPEECH_RECOGNITION_HELPER_TEXT: "Stop speaking to send the message"
   },
   ES: {
     APP_NAME: "Kelvyn Park",
     APP_ASSISTANT_NAME: "Asistente de Chat de Kelvyn Park",
     ABOUT_US_TITLE: "Acerca de Nosotros",
-    ABOUT_US: "¡Bienvenido robot de chat de Kelvyn Park! Estamos aquí para ayudarle a acceder rápidamente a la información relevante.",FAQ_TITLE: "Preguntas frecuentes",
+    ABOUT_US: "¡Bienvenido robot de chat de Kelvyn Park! Estamos aquí para ayudarle a acceder rápidamente a la información relevante.",
+    FAQ_TITLE: "Preguntas frecuentes",
     FAQS: [
       "¿Cuáles son los horarios escolares?",
       "¿Cuáles son los valores fundamentales de la escuela?",
@@ -60,15 +62,16 @@ export const TEXT = {
     HELPER_TEXT: "No se puede enviar un mensaje vacío",
     SPEECH_RECOGNITION_START: "Comenzar a escuchar",
     SPEECH_RECOGNITION_STOP: "Dejar de escuchar",
-    SPEECH_RECOGNITION_HELPER_TEXT: "Deja de hablar para enviar el mensaje" // New helper text
+    SPEECH_RECOGNITION_HELPER_TEXT: "Deja de hablar para enviar el mensaje"
   }
 };
 
-export const SWITCH_TEXT ={
-  SWITCH_LANGUAGE_ENGLISH :  "English",
-  SWITCH_TOOLTIP_ENGLISH : "Language",
-  SWITCH_LANGUAGE_SPANISH : "Español",
-  SWITCH_TOOLTIP_SPANISH : "Idioma"};
+export const SWITCH_TEXT = {
+  SWITCH_LANGUAGE_ENGLISH: "English",
+  SWITCH_TOOLTIP_ENGLISH: "Language",
+  SWITCH_LANGUAGE_SPANISH: "Español",
+  SWITCH_TOOLTIP_SPANISH: "Idioma"
+};
 
 export const LANDING_PAGE_TEXT = {
   EN: {
@@ -77,7 +80,7 @@ export const LANDING_PAGE_TEXT = {
     SPANISH: "Español",
     SAVE_CONTINUE: "Save and Continue",
     APP_ASSISTANT_NAME: "Kelvyn Park Chat Assistant",
-    WELCOME_MESSAGE : "This chat is designed to help you access information about Kelvyn Park. You can ask questions about getting more involved, school hours, event and sports schedules, and more!"
+    WELCOME_MESSAGE: "This chat is designed to help you access information about Kelvyn Park. You can ask questions about getting more involved, school hours, event and sports schedules, and more!"
   },
   ES: {
     CHOOSE_LANGUAGE: "Elige el idioma:",
@@ -85,7 +88,7 @@ export const LANDING_PAGE_TEXT = {
     SPANISH: "Español",
     SAVE_CONTINUE: "Guardar y continuar",
     APP_ASSISTANT_NAME: "Asistente de Chat de Kelvyn Park",
-    WELCOME_MESSAGE : "Este chat está diseñado para ayudarte a acceder a información sobre Kelvyn Park. ¡Puedes hacer preguntas sobre cómo involucrarte más, horarios escolares, eventos y horarios deportivos, y más!"
+    WELCOME_MESSAGE: "Este chat está diseñado para ayudarte a acceder a información sobre Kelvyn Park. ¡Puedes hacer preguntas sobre cómo involucrarte más, horarios escolares, eventos y horarios deportivos, y más!"
   }
 };
 
@@ -93,20 +96,27 @@ export const LANDING_PAGE_TEXT = {
 // --------------------------------------------------------------------------------------------------------//
 
 // API endpoints
-export const CHAT_API = process.env.REACT_APP_CHAT_API; // URL for the chat API endpoint
-export const WEBSOCKET_API = process.env.REACT_APP_WEBSOCKET_API; // URL for the WebSocket API endpoint
+export const CHAT_API = process.env.REACT_APP_CHAT_API;
+
+export const WEBSOCKET_API = (() => {
+  const value = process.env.REACT_APP_WEBSOCKET_API;
+  if (!value) {
+    console.error("🚨 REACT_APP_WEBSOCKET_API is undefined. Check Amplify environment variables.");
+  }
+  return value;
+})();
 
 // --------------------------------------------------------------------------------------------------------//
 // --------------------------------------------------------------------------------------------------------//
 
 // Features
-export const ALLOW_FILE_UPLOAD = false; // Set to true to enable file upload feature
-export const ALLOW_VOICE_RECOGNITION = false; // Set to true to enable voice recognition feature
-export const ALLOW_MULTLINGUAL = true; // Set to true to enable multilingual support
-export const ALLOW_LANDING_PAGE = true; // Set to true to enable the landing page
-export const ALLOW_MARKDOWN_BOT = false; // Set to true to enable markdown support for bot messages
+export const ALLOW_FILE_UPLOAD = false;
+export const ALLOW_VOICE_RECOGNITION = false;
+export const ALLOW_MULTLINGUAL = true;
+export const ALLOW_LANDING_PAGE = true;
+export const ALLOW_MARKDOWN_BOT = false;
+
 // VERY IMPORTANT
 // REMOVE THE POST PROCESSING IN SPEECH RECOGNITION TO DETECT CALVIN AS KELYVIN IN SPEECH RECOGNITION COMPONENT
 // ALSO update the title in the index.html file in the public folder
 // Change the public favicon.ico to the new favicon.ico that you would like to use
-

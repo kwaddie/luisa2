@@ -4,12 +4,11 @@
   "bin": {
     "kelvyn-park-chat-assistant": "bin/kelvyn-park-chat-assistant.js"
   },
- "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview"
-}
-,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/node": "20.14.9",
@@ -26,10 +25,17 @@
     "@aws-cdk/aws-apigatewayv2-alpha": "^2.114.1-alpha.0",
     "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.114.1-alpha.0",
     "@cdklabs/generative-ai-cdk-constructs": "^0.1.140",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.0.2",
+    "@mui/material": "^7.0.2",
     "aws-cdk-lib": "2.149.0",
+    "axios": "^1.9.0",
     "constructs": "^10.0.0",
     "react": "^19.1.0",
+    "react-cookie": "^8.0.1",
     "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
     "source-map-support": "^0.5.21"
   }
 }

@@ -1,25 +1,25 @@
 // --------------------------------------------------------------------------------------------------------//
 // Primary color constants for the theme
-export const PRIMARY_MAIN = "#444E56"; // The main primary color used for buttons, highlights, etc.
+export const PRIMARY_MAIN = "#444E56";
 export const primary_50 = "#E7B00C";
+
 // Background color constants
-export const SECONDARY_MAIN = "#D3D3D3"; // The main secondary color used for less prominent elements
+export const SECONDARY_MAIN = "#D3D3D3";
 
 // Chat component background colors
-export const CHAT_BODY_BACKGROUND = "#FFFFFF"; // Background color for the chat body area
-export const CHAT_LEFT_PANEL_BACKGROUND = "#444E56"; // Background color for the left panel in the chat
-export const ABOUT_US_HEADER_BACKGROUND = "#FFFFFF"; // Background color for the About Us section in the left panel
-export const FAQ_HEADER_BACKGROUND = "#FFFFFF"; // Background color for the FAQ section in the left panel
-export const ABOUT_US_TEXT = "#FFFFFF"; // Text color for the About Us section in the left panel
-export const FAQ_TEXT = "#FFFFFF"; // Text color for the FAQ section in the left panel
-export const HEADER_BACKGROUND = "#FFFFFF"; // Background color for the header
-export const HEADER_TEXT_GRADIENT = "#444E56"; // Text gradient color for the header
+export const CHAT_BODY_BACKGROUND = "#FFFFFF";
+export const CHAT_LEFT_PANEL_BACKGROUND = "#444E56";
+export const ABOUT_US_HEADER_BACKGROUND = "#FFFFFF";
+export const FAQ_HEADER_BACKGROUND = "#FFFFFF";
+export const ABOUT_US_TEXT = "#FFFFFF";
+export const FAQ_TEXT = "#FFFFFF";
+export const HEADER_BACKGROUND = "#FFFFFF";
+export const HEADER_TEXT_GRADIENT = "#444E56";
 
 // Message background colors
-export const BOTMESSAGE_BACKGROUND = "#F5F5F5"; // Background color for messages sent by the bot
-export const USERMESSAGE_BACKGROUND = "#FFEFCA"; // Background color for messages sent by the user
+export const BOTMESSAGE_BACKGROUND = "#F5F5F5";
+export const USERMESSAGE_BACKGROUND = "#FFEFCA";
 
-// --------------------------------------------------------------------------------------------------------//
 // --------------------------------------------------------------------------------------------------------//
 
 // Text Constants
@@ -93,20 +93,18 @@ export const LANDING_PAGE_TEXT = {
 };
 
 // --------------------------------------------------------------------------------------------------------//
-// --------------------------------------------------------------------------------------------------------//
 
 // API endpoints
-export const CHAT_API = process.env.REACT_APP_CHAT_API;
+export const CHAT_API = import.meta.env.VITE_CHAT_API;
 
 export const WEBSOCKET_API = (() => {
-  const value = process.env.REACT_APP_WEBSOCKET_API;
+  const value = import.meta.env.VITE_WEBSOCKET_API;
   if (!value) {
-    console.error("🚨 REACT_APP_WEBSOCKET_API is undefined. Check Amplify environment variables.");
+    console.error("🚨 VITE_WEBSOCKET_API is undefined. Check Amplify environment variables.");
   }
   return value;
 })();
 
-// --------------------------------------------------------------------------------------------------------//
 // --------------------------------------------------------------------------------------------------------//
 
 // Features
@@ -120,3 +118,4 @@ export const ALLOW_MARKDOWN_BOT = false;
 // REMOVE THE POST PROCESSING IN SPEECH RECOGNITION TO DETECT CALVIN AS KELYVIN IN SPEECH RECOGNITION COMPONENT
 // ALSO update the title in the index.html file in the public folder
 // Change the public favicon.ico to the new favicon.ico that you would like to use
+

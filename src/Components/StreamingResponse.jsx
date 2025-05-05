@@ -47,6 +47,11 @@ const StreamingMessage = ({ initialMessage, setProcessing }) => {
           setResponses((prev) => [...prev, parsedData.text]);
         }
 
+        if (parsedData.type === "response") {
+          setResponses((prev) => [...prev, parsedData.message]);
+          setProcessing(false);
+        }
+
         messageBuffer.current = "";
       } catch (e) {
         if (e instanceof SyntaxError) {
